@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // Trigger when 15% is visible
+        threshold: 0.1 // Trigger earlier
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Watch all diverse animation elements
-    const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right');
+    // Watch elements
+    const animatedElements = document.querySelectorAll('.fade-in-up');
     animatedElements.forEach(el => observer.observe(el));
 
 
@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollBtn = document.getElementById('scroll-btn');
     if (scrollBtn) {
         scrollBtn.addEventListener('click', () => {
-            const firstSection = document.getElementById('journey');
-            if (firstSection) firstSection.scrollIntoView({ behavior: 'smooth' });
+            const gallerySection = document.getElementById('gallery');
+            if (gallerySection) gallerySection.scrollIntoView({ behavior: 'smooth' });
         });
     }
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.close');
-    const images = document.querySelectorAll('.moment-image img');
+    const images = document.querySelectorAll('.gallery-item img');
 
     function openLightbox(src) {
         if (!lightbox) return;
