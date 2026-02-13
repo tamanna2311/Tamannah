@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollBtn = document.getElementById('scroll-btn');
     if (scrollBtn) {
         scrollBtn.addEventListener('click', () => {
-            const gallerySection = document.getElementById('gallery');
+            const gallerySection = document.getElementById('journey');
             if (gallerySection) gallerySection.scrollIntoView({ behavior: 'smooth' });
         });
     }
@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Simple Lightbox (Just for zoom interaction)
+    // 4. Lightbox (Updated for Moment Cards)
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.close');
-    const images = document.querySelectorAll('.gallery-item img');
+    const images = document.querySelectorAll('.moment-image-wrapper img'); // Updated selector
 
     function openLightbox(src) {
         if (!lightbox) return;
